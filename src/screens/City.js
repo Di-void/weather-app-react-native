@@ -23,44 +23,44 @@ const City = () => {
     riseSetText
   } = styles
   return (
-    <SafeAreaView style={container}>
-      <ImageBackground
-        source={require('../../assets/city-background.jpg')}
-        style={imageLayout}
-      >
-        <Text style={[cityName, cityText]}>London</Text>
-        <Text style={[countryName, cityText]}>UK</Text>
-        <View style={[populationWrapper, rowLayout]}>
-          <IconText
-            iconName={'user'}
-            iconColor={'red'}
-            bodyText={'8000'}
-            bodyTextStyles={populationText}
-          />
-        </View>
-        <View style={[riseSetWrapper, rowLayout]}>
-          <IconText
-            iconColor={'white'}
-            iconName={'sunrise'}
-            bodyText={'10:46:58am'}
-            bodyTextStyles={riseSetText}
-          />
-          <IconText
-            iconColor={'white'}
-            iconName={'sunset'}
-            bodyText={'17:28:15pm'}
-            bodyTextStyles={riseSetText}
-          />
-        </View>
-      </ImageBackground>
-    </SafeAreaView>
+    // <SafeAreaView style={container}>
+    <ImageBackground
+      source={require('../../assets/city-background.jpg')}
+      style={imageLayout}
+    >
+      <Text style={[cityName, cityText]}>London</Text>
+      <Text style={[countryName, cityText]}>UK</Text>
+      <View style={[populationWrapper, rowLayout]}>
+        <IconText
+          iconName={'user'}
+          iconColor={'red'}
+          bodyText={'8000'}
+          bodyTextStyles={populationText}
+        />
+      </View>
+      <View style={[riseSetWrapper, rowLayout]}>
+        <IconText
+          iconColor={'white'}
+          iconName={'sunrise'}
+          bodyText={'10:46:58am'}
+          bodyTextStyles={riseSetText}
+        />
+        <IconText
+          iconColor={'white'}
+          iconName={'sunset'}
+          bodyText={'17:28:15pm'}
+          bodyTextStyles={riseSetText}
+        />
+      </View>
+    </ImageBackground>
+    // </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0
+    flex: 1
+    // marginTop: StatusBar.currentHeight || 0
   },
   imageLayout: {
     flex: 1

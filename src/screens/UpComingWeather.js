@@ -47,27 +47,27 @@ const UpComingWeather = () => {
   )
   const { container, img } = styles
   return (
-    <SafeAreaView style={container}>
-      <ImageBackground
-        source={require('../../assets/cloud-background.jpg')}
-        style={img}
-      >
-        <Text>Upcoming Weather</Text>
+    // <SafeAreaView style={container}>
+    <ImageBackground
+      source={require('../../assets/cloud-background.jpg')}
+      style={img}
+    >
+      <Text>Upcoming Weather</Text>
 
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.dt_txt}
-        />
-      </ImageBackground>
-    </SafeAreaView>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.dt_txt}
+      />
+    </ImageBackground>
+    // </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    // marginTop: StatusBar.currentHeight || 0,
     backgroundColor: 'skyblue'
   },
   img: {
