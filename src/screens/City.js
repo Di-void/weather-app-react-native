@@ -7,16 +7,51 @@ import {
   ImageBackground,
   StatusBar
 } from 'react-native'
+import IconText from '../components/IconText'
 
 const City = () => {
+  const {
+    container,
+    cityName,
+    cityText,
+    rowLayout,
+    populationText,
+    populationWrapper,
+    countryName,
+    imageLayout,
+    riseSetWrapper,
+    riseSetText
+  } = styles
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={container}>
       <ImageBackground
         source={require('../../assets/city-background.jpg')}
-        style={styles.imageLayout}
+        style={imageLayout}
       >
-        <Text style={styles.cityName}>London</Text>
-        <Text style={styles.countryName}>UK</Text>
+        <Text style={[cityName, cityText]}>London</Text>
+        <Text style={[countryName, cityText]}>UK</Text>
+        <View style={[populationWrapper, rowLayout]}>
+          <IconText
+            iconName={'user'}
+            iconColor={'red'}
+            bodyText={'8000'}
+            bodyTextStyles={populationText}
+          />
+        </View>
+        <View style={[riseSetWrapper, rowLayout]}>
+          <IconText
+            iconColor={'white'}
+            iconName={'sunrise'}
+            bodyText={'10:46:58am'}
+            bodyTextStyles={riseSetText}
+          />
+          <IconText
+            iconColor={'white'}
+            iconName={'sunset'}
+            bodyText={'17:28:15pm'}
+            bodyTextStyles={riseSetText}
+          />
+        </View>
       </ImageBackground>
     </SafeAreaView>
   )
@@ -31,18 +66,37 @@ const styles = StyleSheet.create({
     flex: 1
   },
   cityName: {
+    fontSize: 40
+  },
+  countryName: {
+    fontSize: 30
+  },
+  cityText: {
     justifyContent: 'center',
     alignSelf: 'center',
-    fontSize: 40,
     fontWeight: 'bold',
     color: 'white'
   },
-  countryName: {
+  populationWrapper: {
     justifyContent: 'center',
-    alignSelf: 'center',
-    fontSize: 30,
-    color: 'white',
-    fontWeight: 'bold'
+    marginTop: 30
+  },
+  populationText: {
+    fontSize: 25,
+    marginLeft: 7.5,
+    color: 'red'
+  },
+  riseSetWrapper: {
+    justifyContent: 'space-around',
+    marginTop: 30
+  },
+  riseSetText: {
+    fontSize: 20,
+    color: 'white'
+  },
+  rowLayout: {
+    flexDirection: 'row',
+    alighItems: 'center'
   }
 })
 export default City
