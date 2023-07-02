@@ -11,7 +11,6 @@ import IconText from '../components/IconText'
 
 const City = () => {
   const {
-    container,
     cityName,
     cityText,
     rowLayout,
