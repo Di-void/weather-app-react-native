@@ -8,7 +8,7 @@ import { Feather } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator()
 
-const Tabs = () => {
+const Tabs = ({ weather }) => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -38,8 +38,9 @@ const Tabs = () => {
           )
         }}
         name={'Current'}
-        component={CurrentWeather}
-      />
+      >
+        {() => <CurrentWeather weatherData={weather.list[0]} />}
+      </Tab.Screen>
       <Tab.Screen
         options={{
           tabBarIcon: ({ focused }) => (
@@ -51,8 +52,9 @@ const Tabs = () => {
           )
         }}
         name={'Upcoming'}
-        component={UpComingWeather}
-      />
+      >
+        {() => <UpComingWeather weatherData={weather.list} />}
+      </Tab.Screen>
       <Tab.Screen
         options={{
           tabBarIcon: ({ focused }) => (
