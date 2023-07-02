@@ -66,8 +66,9 @@ const Tabs = ({ weather }) => {
           )
         }}
         name={'City'}
-        component={City}
-      />
+      >
+        {() => <City weatherData={weather.city} />}
+      </Tab.Screen>
     </Tab.Navigator>
   )
 }
